@@ -1,0 +1,16 @@
+<div class="card border-0 mt-3">
+    <div class="card-body" [ngClass]="{
+            'bg-success':todo.isComplete,
+            'text-white':todo.isComplete || !todo.isComplete,
+            'bg-danger':!todo.isComplete
+        }">
+            <h3>{{todo.title}}</h3>
+            <p>{{todo.description}}</p>
+        
+
+        <div class="container">
+            <button class="btn btn-danger btn-sm" (click)="deleteTodo(todo.id)">Delete</button>
+            <button class="btn btn-primary ms-3 btn-sm" [routerLink]="['/update-todo',todo.id]">Update</button>
+        </div>
+    </div>
+</div>

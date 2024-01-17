@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card my-4 border-0 shadow-sm">
+                <div class="card-body">
+                    <h3>UPDATE TODO</h3>
+
+                    <form (ngSubmit)="updateTodo()">
+                        <div class="mt-4">
+                            <label for="title">Title</label>
+                            <input type="text" id="title" name="title" class="form-control" placeholder="Enter Title" [(ngModel)]="todo.title">
+                        </div>
+                        <div class="mt-4">
+                            <label for="description">Description</label>
+                            <textarea id="description" cols="5" rows="3" class="form-control" name="description" [(ngModel)]="todo.description">Enter Description...</textarea>
+                        </div>
+                        <div class="mt-4 form-check form-check-inline">
+                            <input type="checkbox" value="isComplete" id="isComplete" class="form-check-input" name="isComplete" [(ngModel)]="todo.isComplete">
+                            <label for="isComplete" class="form-check-label">Mark as Done!</label>
+                        </div>
+                        <div class="container text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-sm">Update</button>
+                            <button type="reset" class="btn btn-warning btn-sm ms-3">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- {{todo | json}} -->

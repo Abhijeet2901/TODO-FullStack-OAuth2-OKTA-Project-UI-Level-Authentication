@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+            <div class="card border-0 shadow-sm my-4">
+                <div class="card-body">
+                    <h3>MY TODOs</h3>
+                    <div class="alert alert-danger mt-5 border-0" *ngIf="todos.length==0">
+                        <h3>NO Todos Found!!</h3>
+                        <p>Please add new Todo...</p>
+                        <button class="btn btn-success btn-sm" [routerLink]="'/add-todo'">ADD</button>
+                    </div>
+                    <app-todo-view *ngFor="let todo of todos" 
+                    [todo]="todo"
+                    
+                    (deleteEvent)="deleteTodoFromParent($event)"
+
+                    ></app-todo-view>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
