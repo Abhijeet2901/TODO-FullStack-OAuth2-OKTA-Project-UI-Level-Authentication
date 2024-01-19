@@ -66,6 +66,11 @@ export class ApiService {
     // set the Authorization header
     let hdr = new HttpHeaders();
     hdr = hdr.set('Authorization', `Bearer ${token}`);
-    return this.httpService.delete(this.baseUrl+"/delete/"+id, { headers: hdr });
+
+
+    //Error faced while deleting:
+    //"HttpErrorResponse", "message": "Http failure during parsing for http://localhost:8080/not/delete/21"
+    //Soln: responseType: 'text' to be added
+    return this.httpService.delete(this.baseUrl+"/delete/"+id, { headers: hdr,responseType: 'text' });
   }
 }
